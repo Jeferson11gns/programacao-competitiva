@@ -15,33 +15,33 @@ int main(){
             scanf("%d", &tab[i][j]);
         }
     }
-   
-    while(k < n){
-        
-        
-        for(i = 0; i < n; i++){
+
+
+    int aux_linha[n], aux_coluna[n];
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
             //linhas
-            linha += tab[k][i];
+            linha += tab[i][j];
             //coluna
-            coluna += tab[i][ciclo];
-
-        }
-        total = linha + coluna - (tab[k][ciclo]*2);
-            
-        if(total > controle) controle = total;
-       
-        
-        if(ciclo < n-1) ciclo++;
-        else{
-            ciclo = 0;
-            k++;
+            coluna += tab[j][i];
+           
         }
 
-            
+        aux_linha[i] = linha;
+        aux_coluna[i] = coluna;
+
         linha = 0;
         coluna = 0;
 
     }    
+
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            total = aux_linha[i] + aux_coluna[j] - (tab[i][j]*2);
+            
+            if(total > controle) controle = total;     
+        }
+    }
 
 
     printf("%d\n", controle);
