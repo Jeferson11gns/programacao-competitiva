@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-    int n, i, j, k = 0, linha = 0, coluna = 0, total , controle = 0, ciclo = 0;
+    int n, i, j, linha = 0, coluna = 0, total , controle = 0;
 
     scanf("%d", &n);
     int tab[n][n];
